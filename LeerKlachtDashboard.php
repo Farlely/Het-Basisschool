@@ -9,46 +9,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php"><img src="Logo.png" width="50" height="50" alt="..."></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">StartPagina<span class="sr-only">(current)</span></a>
+      </li>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<a class="navbar-brand" href="index.php">BasisOnderwijs</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="index.php">StartPagina</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="LeerklachtWelkom.php">Leerklacht</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contact</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Leerling
-      </a>
-      <div class="dropdown-menu">
-        <li class="dropdown-header">LeerlingToevoegen</li>
-        <a class="dropdown-item" href="#">Niuewe Leerling Toevoegen</a>
-        <a class="dropdown-item" href="Klas1Overzicht.php">Oversicht Leerling klas 1 </a>
-        <a class="dropdown-item" href="Klas2Overzicht">Oversicht Leerling klas 2</a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><?php
-      echo '<a href="LeerKlachtDashboardLgout.php">Logout</a>';
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leerling
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Niuew Leerling toevoegen</a>
+          <a class="dropdown-item" href="Klas1Overzicht.php">Overzicht Leerling klas 1 </a>
+          <a class="dropdown-item" href="Klas2Overzicht.php">Oversicht Leerling klas 2 </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><?php
+        echo '<a href="LeerKlachtDashboardLgout.php">Logout</a>';
 
-       ?></a>
-    </li>
-  </ul>
-</div>
+         ?></a>
+      </li>
+    </ul>
+  </div>
 </nav>
-
-  </body>
+<body>
 
     <div class="row">
 
