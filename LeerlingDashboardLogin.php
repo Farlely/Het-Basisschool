@@ -5,7 +5,7 @@
  $host = "localhost";
  $username = "root";
  $password = "root";
- $database = "testing";
+ $database = "Het-Basisonderwijs";
  $message = "";
 
  try
@@ -20,7 +20,7 @@
       $message = '<label>ALL fields are required</label>';
     }
     else {
-      $query = "SELECT * FROM user WHERE username = :username AND password = :password";
+      $query = "SELECT * FROM LeerlingLogin WHERE Gebruikersnaam = :username AND Wachtwoord = :password";
       $statement = $connect->prepare($query);
       $statement-> execute(
         array(

@@ -43,19 +43,22 @@
       <form action="LeerlingDashboardLogin.php" method="POST">
      <h3> Welkom Leerling</h3><br/>
      <form method="post">
-        <label>username</label>
-       <input type="text" name="username" class="form-control" />
+        <label>Gebruikersnaam:</label>
+       <input type="text" name="username" placeholder="Voer je voor/achternaam" class="form-control" required/>
+       <small id="passwordHelpBlock" class="form-text text-muted">
+       Je Gebruikersnaam is je Voornaam en achternaam
+     </small>
        <br/>
 
-       <label>password</label>
-      <input type="password" name="password" class="form-control" />
+       <label>Wachtwoord (8 characters minimum):</label>
+      <input type="password" name="password" class="form-control"  minlength="8" required/>
       <small id="passwordHelpBlock" class="form-text text-muted">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      Wachtwoord vindt je bij de administratie
     </small>
       <br/>
-
+ <center>
       <input type="submit" name="login" class="btn btn-info" value="Login" />
-
+</center>
      </form>
     </div>
     <br/>

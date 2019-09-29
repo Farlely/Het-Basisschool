@@ -45,12 +45,15 @@
      <form method="post">
         <label>username</label>
        <input type="text" name="username" class="form-control" />
+       <small id="passwordHelpBlock" class="form-text text-muted">
+       Gebruikersnaam is u Docentcode.
+     </small>
        <br/>
 
        <label>password</label>
       <input type="password" name="password" class="form-control" />
       <small id="passwordHelpBlock" class="form-text text-muted">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      Wachtwoord vind u bij de administratie
     </small>
       <br/>
 
