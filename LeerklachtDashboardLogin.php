@@ -1,48 +1,34 @@
+
 <?php
+require_once ('dbcon.php');
 
-
- session_start();
- $host = "localhost";
- $username = "root";
- $password = "root";
- $database = "Het-basisonderwijs";
  $message = "";
-
- try
+ 
+ if(isset($_POST["login"]))
  {
-  $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
-  $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   if(empty($_POST["username"]) || empty($_POST["password"]))
+   {
+     $message = '<label>ALL fields are required</label>';
+   }
+   else {
 
-  if(isset($_POST["login"]))
-  {
-    if(empty($_POST["username"]) || empty($_POST["password"]))
-    {
-      $message = '<label>ALL fields are required</label>';
-    }
-    else {
-      $query = "SELECT * FROM LeerkrachtLogin WHERE GebruikerNaam = :username AND Wachtwoord = :password";
-      $statement = $connect->prepare($query);
-      $statement-> execute(
-        array(
-          'username' => $_POST["username"],
-          'password' => $_POST["password"]
+     $stmt = $con->prepare("SELECT * FROM LeerkrachtLogin WHERE GebruikerNaam = :username AND Wachtword = :password");
+     $stmt->execute(
+       array(
+         'username' => $_POST["username"],
+         'password' => $_POST["password"]
 
-        )
-      );
-      $count = $statement->rowCount();
-      if($count > 0)
-      {
-        $_SESSION["username"] = $_POST["username"];
-        header("location:LeerKlachtDashboard.php");
-      }
-      else {
-        $message = '<label> Wrong Data </label>';
-      }
-    }
-  }
+       )
+     );
+     $count = $stmt->rowCount();
+     if($count > 0)
+     {
+       $_SESSION["username"] = $_POST["username"];
+       header("location:DocentDashBoard.php");
+     }
+     else {
+       $message = '<label> Wrong Data </label>';
+     }
+   }
  }
- catch(PDOException $error)
- {
-  $message = $error->getMessage();
- }
- ?>
+  ?>
